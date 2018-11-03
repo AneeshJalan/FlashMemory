@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,9 +11,12 @@
         android:id="@+id/flashcard_question"
         android:layout_width="334dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="-3dp"
+        android:layout_alignTop="@+id/flashcard_answer"
+        android:layout_alignBottom="@+id/flashcard_answer"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="-54dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginBottom="-42dp"
         android:text="Who was the 44th President of the United States?"
         android:textAlignment="center"
         android:textSize="40sp"
@@ -32,4 +36,16 @@
         android:visibility="invisible"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="264dp" />
+
+    <ImageButton
+        android:id="@+id/add_question"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/add_question_button"
+        tools:backgroundTint="@android:color/background_light" />
+
 </RelativeLayout>
