@@ -19,7 +19,7 @@ This app funtions like a normal flashcards app where the user can tap on a quest
 - [ ] User can also enter multiple choice answers when creating a card
 - [ ] App is further styled and customized!
 
-<img src="https://i.imgur.com/K84tW13.gifv" width="200" height="400" />  
+<img src="https://github.com/AneeshJalan/FlashMemory/blob/master/Lab2-Version1.gif" width="200" height="400" />  
 
 # Lab 1 :
 
@@ -33,9 +33,9 @@ This app funtions like a normal flashcards app where the user can tap on a quest
 - [ ] toggle the flashcard between the question side and the answer side
 - [ ] Style the question and answer side of the card to better distinguish between the two sides
 - [ ] Add selectable multiple choice answers beneath the card
-   - [ ] Change the background color of the multiple choice answers when clicked to indicate whether the question waanswered correctly
+- [ ] Change the background color of the multiple choice answers when clicked to indicate whether the question waanswered correctly
 - [ ] Further customize and style the card
 
 
 ### App Walk-though
-<img src="https://i.imgur.com/D1SZRaA.gifv" width=200><br>
+<img src="https://github.com/AneeshJalan/FlashMemory/blob/master/Lab1-Version1.gif" width=200><br>
