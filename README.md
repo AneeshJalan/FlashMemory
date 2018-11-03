@@ -19,6 +19,7 @@ This app funtions like a normal flashcards app where the user can tap on a quest
 - [ ] User can also enter multiple choice answers when creating a card
 - [ ] App is further styled and customized!
 
+### App Walk-through
 <img src="https://github.com/AneeshJalan/FlashMemory/blob/master/Lab2-Version1.gif" width="200" height="400" />  
 
 # Lab 1 :
@@ -37,5 +38,5 @@ This app funtions like a normal flashcards app where the user can tap on a quest
 - [ ] Further customize and style the card
 
 
-### App Walk-though
+### App Walk-through
 <img src="https://github.com/AneeshJalan/FlashMemory/blob/master/Lab1-Version1.gif" width=200><br>
