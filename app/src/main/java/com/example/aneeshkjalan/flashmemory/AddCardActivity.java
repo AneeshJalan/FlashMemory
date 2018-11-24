@@ -29,6 +29,7 @@ public class AddCardActivity extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setResult(RESULT_CANCELED);
                 finish();
             }
         });
@@ -37,8 +38,8 @@ public class AddCardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent updateFlashcard = new Intent(AddCardActivity.this, MainActivity.class);
-                updateFlashcard.putExtra("question", newQuestion.getText());
-                updateFlashcard.putExtra("answer", newAnswer.getText());
+                updateFlashcard.putExtra("question", newQuestion.getText().toString());
+                updateFlashcard.putExtra("answer", newAnswer.getText().toString());
                 setResult(RESULT_OK, updateFlashcard );
                 finish();
             }
