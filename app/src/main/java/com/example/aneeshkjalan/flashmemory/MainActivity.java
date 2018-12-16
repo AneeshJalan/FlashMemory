@@ -56,8 +56,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent createQuestion = new Intent(MainActivity.this, AddCardActivity.class);
-                startActivityForResult(createQuestion,1);
+                startActivityForResult(createQuestion,CREATE_QUESTION_CODE);
                 //data = database.getAllCards();
+                /*for(int i = 0; i < data.size(); i++) {
+                    System.err.println("The card at index " + i + " is " + data.get(i).getQuestion());
+                }*/
+                //currCard = data.size() - 1;
             }
         });
 
@@ -77,20 +81,25 @@ public class MainActivity extends AppCompatActivity {
             String question = data.getStringExtra("question");
             String answer = data.getStringExtra("answer");
 
-            System.err.println("The question is " + question + " and the answer is " + answer + ".");
+            if(this.data.isEmpty()) {
+                // When first card is added
+                nextCard.setVisibility(View.VISIBLE);
+                emptyState.setVisibility(View.INVISIBLE);
+            }
 
             database.insertCard(new Flashcard(question, answer));
 
-            emptyState.setVisibility(View.INVISIBLE);
-            flashcardQuestion.setText(question);
-            flashcardAnswer.setText(answer);
-            flashcardQuestion.setVisibility(View.VISIBLE);
+            this.data = database.getAllCards();
+            currCard = this.data.size() - 1;
+            displayCard(currCard, this.data, flashcardQuestion, flashcardAnswer);
         }
     }
 
     public void displayCard(int card, List<Flashcard> allCards, TextView question, TextView answer){
         question.setText(allCards.get(card).getQuestion());
         answer.setText(allCards.get(card).getAnswer());
+        question.setVisibility(View.VISIBLE);
+        answer.setVisibility(View.INVISIBLE);
     }
 
 
