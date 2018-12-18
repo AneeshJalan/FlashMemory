@@ -23,7 +23,8 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="74" />
+                                                <entry key="scalingPercent" value="66" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -34,7 +35,30 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="42" />
+                                                <entry key="scalingPercent" value="65" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="foregroundText">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="ffdc30" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="foregroundTextAsset">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="fontFamily" value="Fira Code Retina" />
+                                                <entry key="text" value="FlashMemory" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,11 +68,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundImage" value="C:\Users\Aneesh K. Jalan\Desktop\CSE\Projects\AndroidApps\FlashMemory\app\src\main\res\drawable\brain.png" />
-                                      <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="C:\Users\Aneesh K. Jalan\Desktop\CSE\Projects\AndroidApps\FlashMemory\app\src\main\res\drawable\flash.png" />
-                                      <entry key="foregroundLayerName" value="ic_launcher_foreground" />
-                                      <entry key="outputName" value="flashmemory_launcher" />
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="ffdc30" />
+                                      <entry key="backgroundImage" value="C:\Users\Aneesh K. Jalan\Desktop\CSE\Projects\AndroidApps\FlashMemory\app\src\main\res\drawable\electric_brain.png" />
+                                      <entry key="foregroundImage" value="C:\Users\Aneesh K. Jalan\Desktop\CSE\Projects\AndroidApps\FlashMemory\app\src\main\res\drawable\electric_brain.png" />
                                     </map>
                                   </option>
                                 </PersistentState>
