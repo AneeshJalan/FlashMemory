@@ -31,6 +31,7 @@ public class AddCardActivity extends AppCompatActivity {
             public void onClick(View view) {
                 setResult(RESULT_CANCELED);
                 finish();
+                overridePendingTransition(R.anim.left_in, R.anim.right_out);
             }
         });
 
@@ -42,6 +43,7 @@ public class AddCardActivity extends AppCompatActivity {
                 updateFlashcard.putExtra("answer", newAnswer.getText().toString());
                 setResult(RESULT_OK, updateFlashcard );
                 finish();
+                overridePendingTransition(R.anim.left_in, R.anim.right_out);
             }
         });
     }

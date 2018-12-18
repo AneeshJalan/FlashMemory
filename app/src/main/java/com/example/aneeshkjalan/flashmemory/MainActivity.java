@@ -1,10 +1,14 @@
 package com.example.aneeshkjalan.flashmemory;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.service.autofill.TextValueSanitizer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -47,8 +51,19 @@ public class MainActivity extends AppCompatActivity {
         flashcardQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final int centerX = (int) (/*flashcardAnswer.getX() +*/ (flashcardAnswer.getWidth()/2));
+                final int centerY = (int) (/*flashcardAnswer.getY() +*/ (flashcardAnswer.getHeight()/2));
+
+                final float finalRadius = (float) Math.hypot(centerX, centerY);
+
+                Animator revealAnim = ViewAnimationUtils.createCircularReveal(flashcardAnswer, centerX, centerY, 0f, finalRadius);
+
                 flashcardQuestion.setVisibility(View.INVISIBLE);
                 flashcardAnswer.setVisibility(View.VISIBLE);
+
+                revealAnim.setDuration(1000);
+                revealAnim.start();
+
             }
         });
 
@@ -56,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent createQuestion = new Intent(MainActivity.this, AddCardActivity.class);
+
                 startActivityForResult(createQuestion,CREATE_QUESTION_CODE);
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 //data = database.getAllCards();
                 /*for(int i = 0; i < data.size(); i++) {
                     System.err.println("The card at index " + i + " is " + data.get(i).getQuestion());
@@ -70,7 +87,34 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 data = database.getAllCards();
                 currCard = (currCard + 1) % data.size();
-                displayCard(currCard, data, flashcardQuestion, flashcardAnswer);
+
+                final Animation leftOutAnim = AnimationUtils.loadAnimation(view.getContext(), R.anim.left_out);
+                final Animation rightInAnim = AnimationUtils.loadAnimation(view.getContext(), R.anim.right_in);
+
+                leftOutAnim.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        displayCard(currCard, data, flashcardQuestion, flashcardAnswer);
+                        flashcardQuestion.startAnimation(rightInAnim);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+                if( flashcardQuestion.getVisibility() == View.VISIBLE ) {
+                    flashcardQuestion.startAnimation(leftOutAnim);
+                }
+                else {
+                    flashcardAnswer.startAnimation(leftOutAnim);
+                }
             }
         });
     }
